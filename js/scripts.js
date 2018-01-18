@@ -6,7 +6,7 @@ $(document).ready(function() {
   $('#next').click(function(event) {
     $('#tiers').hide();
     $('#survey2').show();
-    var tier = $('input:radio:checked').val();
+    tier = $('input:radio:checked').val();
     console.log(tier);
   });
   $('#survey2').submit(function(event) {
@@ -22,17 +22,47 @@ $(document).ready(function() {
     console.log(total);
     //function that shows character based on sum of trait array
     if (total >=5){
-      $("#character").html('<img src="img/fox.png">')
-      total = 0;
-      trait = [];
+      if (tier === "top") {
+        $("#character").html('<div class="character-info"><img src="img/fox.png" class="char-img"></div>')
+        total = 0;
+        trait = [];
+      } else if (tier === "mid"){
+        $("#character").html('<div class="character-info"><img src="img/captain.png" class="char-img"></div>')
+        total = 0;
+        trait = [];
+      } else {
+        $("#character").html('<div class="character-info"><img src="img/dk.png" class="char-img"></div>')
+        total = 0;
+        trait = [];
+      }
     }  else if (total <=2) {
-      $("#character").html('<img src="img/marth.png">')
-      total = 0;
-      trait = [];
+        if (tier === "top") {
+          $("#character").html('<div class="character-info"><img src="img/marth.png" class="char-img"></div>')
+          total = 0;
+          trait = [];
+        } else if (tier === "mid"){
+          $("#character").html('<div class="character-info"><img src="img/peach.png" class="char-img"></div>')
+          total = 0;
+          trait = [];
+        } else {
+          $("#character").html('<div class="character-info"><img src="img/pichu.png" class="char-img"></div>')
+          total = 0;
+          trait = [];
+        }
     } else if (total === 3 || 4){
-      $("#character").html('<img src="img/sheik.png">')
-      total = 0;
-      trait = [];
+        if (tier === "top") {
+          $("#character").html('<div class="character-info"><img src="img/sheik.png" class="char-img"></div>')
+          total = 0;
+          trait = [];
+        } else if (tier === "mid"){
+          $("#character").html('<div class="character-info"><img src="img/iceclimber.png" class="char-img"></div>')
+          total = 0;
+          trait = [];
+        } else {
+          $("#character").html('<div class="character-info"><img src="img/gameandwatch.png" class="char-img"></div>')
+          total = 0;
+          trait = [];
+        }
     }
   })
 
